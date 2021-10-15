@@ -1,0 +1,23 @@
+{
+  "name": "pinterest-clone",
+  "version": "1.0.0",
+  "description": "The purpose of the project is to build functionality similar to  https://build-a-pinterest-clone.freecodecamp.rocks/.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derektypist/pinterest-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derektypist/pinterest-clone/issues"
+  },
+  "homepage": "https://github.com/derektypist/pinterest-clone#readme",
+  "dependencies": {
+    "masonry-layout": "^4.2.2"
+  }
+}
