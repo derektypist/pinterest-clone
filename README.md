@@ -24,6 +24,11 @@ Uses [Masonry.js](https://masonry.desandro.com)
 
 ## Credits
 
+### Contents
+
+Did Searches on GitHub and Google about FCC Pinterest Clone.  Accessed 15 October 2021.
+
 ### Acknowledgements
 
 - [FreeCodeCamp](https://www.freecodecamp.org)
+- [Teemu Seppala](https://github.com/Feddle/pinterest-clone)
