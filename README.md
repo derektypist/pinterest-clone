@@ -18,6 +18,10 @@ As an authenticated user, if I upload an image that is broken, it will be replac
 
 Masonry.js is a library that allows for Pinterest-style grids.
 
+## Technologies
+
+Uses [Masonry.js](https://masonry.desandro.com)
+
 ## Credits
 
 ### Acknowledgements
