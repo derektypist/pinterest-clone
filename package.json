@@ -19,6 +19,7 @@
   "homepage": "https://github.com/derektypist/pinterest-clone#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "masonry-layout": "^4.2.2"
+    "masonry-layout": "^4.2.2",
+    "mongoose": "^6.0.11"
   }
 }
