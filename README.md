@@ -18,6 +18,14 @@ As an authenticated user, if I upload an image that is broken, it will be replac
 
 Masonry.js is a library that allows for Pinterest-style grids.
 
+**Information Architecture**
+
+User consists of username, githubId, password, link and imagelinks.  All are string except imagelinks, which is in the Schema.Types.ObjectId.
+
+In addition, username and link are required and unique and imagelinks is an array.
+
+Pin consists of owner, ownerid, ownerlink, link and title.  All are string, except ownerid, which is in the Schema.Types.ObjectId.  All are required.  In addition, link is unique.
+
 ## Technologies
 
 Uses [Masonry.js](https://masonry.desandro.com)
