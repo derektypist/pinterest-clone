@@ -29,3 +29,12 @@ router.post("/local", urlencodedParser,
     failureFlash: true
   })
 );
+
+// GitHub
+router.get("/github",passport.authenticate("github"));
+
+router.get("/github/redirect", passport.authenticate("github"), (req,res) => {
+  res.redirect("/");
+});
+
+module.exports = router;
