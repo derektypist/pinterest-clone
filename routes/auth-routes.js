@@ -15,3 +15,17 @@ router.get("/", (req,res) => {
     res.render('signin',req.flash('error'));
   }
 });
+
+// Auth Logout
+router.get("/signout", (req,res) => {
+  req.logout();
+  res.redirect("/");
+});
+
+router.post("/local", urlencodedParser, 
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/auth",
+    failureFlash: true
+  })
+);
