@@ -15,3 +15,23 @@ passport.deserializeUser((id,done) => {
     done(null,user);
   });
 });
+
+// Apply uses of passport
+passport.use(new LocalStrategy((username, password, done) => {
+  User.findOne({username}, (err,user) => {
+    if (err) {
+      return done(err);
+    }
+
+    if (!user) {
+      return done(null, false, { message: "Authentication failed.  Try again later."});
+    }
+
+    if (user.password != password) {
+      return done(null, false, { message: "Authentication failed.  Try again later."});
+    }
+
+    return done(null, user);
+  });
+});
+
