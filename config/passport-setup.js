@@ -35,3 +35,22 @@ passport.use(new LocalStrategy((username, password, done) => {
   });
 });
 
+passport.use(new GithubStrategy({
+  clientID: process.env.GITHUB_CURRENT_ID,
+  clientSecret: process.env.GITHUB_CURRENT_SECRET,
+  callbackURL: 'https://pinterest-clone.ddxps46.repl.co/auth/github/redirect'
+}, (accessToken,refreshToken,profile,done) => {
+  User.findOne({githubId: profile.id}).then((currentUser) => {
+    if (currentUser) {
+      done(null, currentUser);
+    } else {
+      new User({
+        githubId: profile.id,
+        username: profile.username,
+        link: randomBytes(3).toString("hex")
+      }).save().then((theNewUser) => {
+        done(null, theNewUser);
+      });
+    }
+  });
+}));
