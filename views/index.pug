@@ -29,7 +29,7 @@ body
           span
             a(href='/auth/signout' class='btn btn-outline-light mr-auto') Sign Out
   // Content
-  main(class='container-fluid bg-light' id='main-container')
+  article(class='container-fluid bg-light' id='main-container')
     if username
       h3 username
     article(class='grid')
@@ -52,7 +52,38 @@ body
     button(type='button' class='btn position-sticky rounded-circle main-button shadow' data-bs-toggle='modal' data-bs-tooltip='tooltip' data-bs-placement='top' title='Add Pin' data-bs-target='#modal-add-pin') +
     button(type='button' class='btn position-sticky rounded-circle main-button main-button-up shadow float-end' data-bs-tooltip='tooltip' data-bs-placement='top' title='Scroll to Top')
       i(class='fas fa-arrow-up')
-  
+  // Modal
+  article(class='modal fade' id='modal-add-pin' tabindex='-1' role='dialog')
+    article(class='modal-dialog' role='document')
+      article(class='modal-content')
+        article(class='modal-header')
+          h5(class='modal-title') Add New Pin
+          button(type='button' class='close' data-bs-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') &times;
+        if user
+          article(class='modal-body')
+            form(id='form-add-pin' method='post' action='/add')
+              article(class='input-group')
+                label(for='my-input-link' class='col-form-label') Image link
+                input(type='text' class='form-control' id='my-input-link' name='link' placeholder='ex. myawesomewebsite.com/myawesomeimage.jpg' required)
+              article(class='input-group')
+                label(for='my-input-title' class='col-form-label') Pin Title
+                input(type='text' class='form-control' id='my-input-title' placeholder='Enter Title' maxlength='90' required)
+            article(class='d-none modal-status-article')
+              p(class='modal-text-loading') Adding Pin, Please Wait
+              article(class='modal-spinner-article')
+          article(class='modal-footer')
+            button(type='button' class='btn btn-secondary' data-bs-dismiss='modal') Cancel
+            button(type='submit' form='form-add-pin' class='btn btn-primary' id='button-add-pin') Add Pin
+        else
+          article(class='modal-body')
+            p(class='text-center') Please sign in to add new pins
+          article(class='modal-footer')
+            button(type='button' class='close' data-bs-dismiss='modal' aria-label='Close') Close
+  // Footer    
+      
+
+
 
 
           
