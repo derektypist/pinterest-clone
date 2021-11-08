@@ -29,7 +29,32 @@ body
           span
             a(href='/auth/signout' class='btn btn-outline-light mr-auto') Sign Out
   // Content
+  main(class='container-fluid bg-light' id='main-container')
+    if username
+      h3 username
+    article(class='grid')
+      article(class='grid-sizer')
+        // Apply Loop
+        each item in items
+          article(class='grid-item rounded border')
+            // Set Up Variables
+            - let itemLink = item.link
+            - let itemTitle = item.title
+            - let itemId = item.id
+            - let itemOwnerLink = '/user/' + item.owner_link
+            img(src=itemLink alt=itemTitle)
+            h5(class='m-1') item.title
+            a(href=itemOwnerLink) item.owner
+            if item.owner === user.username
+              form(method='post' action='/remove')
+                input(type='hidden' name='pinid' value=itemId)
+                button(class='btn btn-right float-end pin-button' type='submit' data-bs-id='') Remove
+    button(type='button' class='btn position-sticky rounded-circle main-button shadow' data-bs-toggle='modal' data-bs-tooltip='tooltip' data-bs-placement='top' title='Add Pin' data-bs-target='#modal-add-pin') +
+    button(type='button' class='btn position-sticky rounded-circle main-button main-button-up shadow float-end' data-bs-tooltip='tooltip' data-bs-placement='top' title='Scroll to Top')
+      i(class='fas fa-arrow-up')
   
+
+
           
             
     
