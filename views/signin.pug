@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+head
+  title Pinterest Clone
+  meta(charset='utf-8')
+  meta(name='description' content='Pinterest Clone by Derek Dhammaloka')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Load Styles
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css')
+  link(rel='stylesheet' href='/style.css')
+body
+  // Set Up Navbar
+  article(class='container-fluid')
+    nav(class='navbar navbar-expand-lg sticky-top navbar-dark bg-primary')
+      a(href='/' class='navbar-brand') Pinterest Clone
+      button(type='button' class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#nav-items' aria-controls='nav-items' aria-expanded='false' aria-label='Toggle navigation')
+        span(class='navbar-toggler-icon')
+      article(class='collapse navbar-collapse' id='nav-items')
+        ul(class='navbar-nav mr-auto')
+        if !user
+          span
+            a(href='/auth' class='btn btn-outline-light') Sign In
+        else
+          span(class='mr-2')
+            // Set Up Variable
+            - let userLink = '/user/' + user.link
+            a(href=userLink class='text-light') user.username
+          span
+            a(href='/auth/signout' class='btn btn-outline-light mr-auto') Sign Out
+    // Set Up content
+    article(class='container-fluid' id='main-container')
+      article(class='container bg-light rounded pb-2 pt-2 mt-2 border')
+        h4 Sign In
+        p This is a demo site and for everyones convenience you cannot sign up
+        p There are 5 test accounts that you can use and play with
+        p If you want, you can sign in with GitHub, in which case no personal information will be stored (except for GitHub ID and Username)
+        p 
