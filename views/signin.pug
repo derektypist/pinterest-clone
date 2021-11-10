@@ -45,4 +45,16 @@ body
             p Username: test3, Password: 12345
             p Username: test4, Password: 12345
             p Username: test5, Password: 12345
+        // Set Up Form
+        form(method='post' action='/auth/local')
+          article(class='input-group')
+            label(for='input-username') Username
+            input(id='input-username' class='form-control' type='text' placeholder='Enter username' name='username')
+          article(class='input-group')
+            label(for='input-password') Password
+            input(id='input-password' class='form-control' type='password' placeholder='Enter password' name='password')
+          button(type='submit' class='btn btn-primary') Sign In
+        if message
+          span(class='text-danger') #{message}
           
+
