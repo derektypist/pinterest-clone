@@ -20,3 +20,10 @@ $grid.imagesLoaded().always(() => {
   $grid.masonry("layout");
 });
 
+// Functions
+$(function() {
+  $('#form-add-pin').on('submit',handleAddPin);
+  $('.main-button-up').on('click', () => {
+    $(window).scrollTop(0);
+  });
+});
