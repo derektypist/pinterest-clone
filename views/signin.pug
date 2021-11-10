@@ -35,4 +35,14 @@ body
         p This is a demo site and for everyones convenience you cannot sign up
         p There are 5 test accounts that you can use and play with
         p If you want, you can sign in with GitHub, in which case no personal information will be stored (except for GitHub ID and Username)
-        p 
+        p
+          button(class='btn btn-outline-dark' type='button' data-bs-toggle='collapse' data-bs-target='#collapse-accounts') Show Test Accounts
+          a(href='/auth/github' class='btn btn-outline-dark') Sign In with GitHub
+        article(class='collapse' id='collapse-accounts')
+          article(class='card card-body')
+            p Username: test1, Password: 12345
+            p Username: test2, Password: 12345
+            p Username: test3, Password: 12345
+            p Username: test4, Password: 12345
+            p Username: test5, Password: 12345
+          
