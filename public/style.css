@@ -51,3 +51,63 @@ body {
   }
 }
 
+/* Grid Items */
+.grid-item {
+  float: left;
+  margin-bottom: 0.5rem;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+}
+
+/* Main Button */
+.main-button {
+  bottom: 100px;
+  width: 3.2rem;
+  height: 3rem;
+  float: right;
+  margin-right: 1rem;
+  opacity: 0.8;
+  font-size: 40px !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+
+.main-button:hover {
+  opacity: 1;
+}
+
+/* Modal Spinner */
+.modal-spinner-article {
+  width: 2rem;
+  height: 2rem;
+  border-top: 2px solid deepskyblue;
+  border-right: 2px solid transparent;
+  border-radius: 50%;
+  animation: rotation .8s linear infinite;
+  margin: auto;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } 
+}
+
+/* Modal Text */
+.modal-text-loading {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Pin Button */
+.pin-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  line-height: 1 !important;
+}
