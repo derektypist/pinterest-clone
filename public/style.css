@@ -13,3 +13,41 @@ body {
   min-height: 100%;
   margin-bottom: 70px !important;
 }
+
+/* Footer - Eclipse Background */
+.footer {
+  background: #343148;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  text-align: right;
+  width: 100%;
+}
+
+/* Grid */
+.grid::after {
+  content:'';
+  display:block;
+  clear:both;
+}
+
+/* Media Queries */
+@media (min-width: 576px) {
+  .grid-sizer, .grid-item {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-sizer, .grid-item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-sizer, .grid-item {
+    width: 20%;
+  }
+}
+
