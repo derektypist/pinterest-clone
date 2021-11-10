@@ -25,7 +25,7 @@ body
           span(class='mr-2')
             // Set Up Variable
             - let userLink = '/user/' + user.link
-            a(href=userLink class='text-light') user.username
+            a(href=userLink class='text-light') #{user.username}
           span
             a(href='/auth/signout' class='btn btn-outline-light mr-auto') Sign Out
   // Set Up Content
@@ -48,7 +48,7 @@ body
             if item.owner === user.username
               form(method='post' action='/remove')
                 input(type='hidden' name='pinid' value=itemId)
-                button(class='btn btn-right float-end pin-button' type='submit' data-bs-id='') Remove
+                button(class='btn btn-light float-end pin-button' type='submit' data-bs-id='') Remove
     button(type='button' class='btn position-sticky rounded-circle main-button shadow' data-bs-toggle='modal' data-bs-tooltip='tooltip' data-bs-placement='top' title='Add Pin' data-bs-target='#modal-add-pin') +
     button(type='button' class='btn position-sticky rounded-circle main-button main-button-up shadow float-end' data-bs-tooltip='tooltip' data-bs-placement='top' title='Scroll to Top')
       i(class='fas fa-arrow-up')
