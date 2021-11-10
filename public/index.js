@@ -20,3 +20,4 @@ $grid.imagesLoaded().always(() => {
   $grid.masonry("layout");
 });
 
+// Function
