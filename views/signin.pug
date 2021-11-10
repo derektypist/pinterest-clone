@@ -25,7 +25,7 @@ body
           span(class='mr-2')
             // Set Up Variable
             - let userLink = '/user/' + user.link
-            a(href=userLink class='text-light') user.username
+            a(href=userLink class='text-light') #{user.username}
           span
             a(href='/auth/signout' class='btn btn-outline-light mr-auto') Sign Out
     // Set Up content
