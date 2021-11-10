@@ -31,7 +31,7 @@ body
   // Set Up Content
   article(class='container-fluid bg-light' id='main-container')
     if username
-      h3 username
+      h3 #{username}
     article(class='grid')
       article(class='grid-sizer')
         // Apply Loop
@@ -43,8 +43,8 @@ body
             - let itemId = item.id
             - let itemOwnerLink = '/user/' + item.owner_link
             img(src=itemLink alt=itemTitle)
-            h5(class='m-1') item.title
-            a(href=itemOwnerLink) item.owner
+            h5(class='m-1') #{item.title}
+            a(href=itemOwnerLink) #{item.owner}
             if item.owner === user.username
               form(method='post' action='/remove')
                 input(type='hidden' name='pinid' value=itemId)
