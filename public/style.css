@@ -1,0 +1,15 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* HTML and Body */
+html {
+  position: relative;
+  min-height: 100vh !important;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: 'Roboto', Arial, Verdana, sans-serif;
+  min-height: 100%;
+  margin-bottom: 70px !important;
+}
