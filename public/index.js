@@ -26,4 +26,25 @@ $(function() {
   $('.main-button-up').on('click', () => {
     $(window).scrollTop(0);
   });
+
+  $(window).on('scroll', () => {
+    let element = document.body;
+    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+      loadMoreImages();
+    }
+  });
+
+  $("[data-bs-tooltip=\"tooltip\"]").tooltip();
 });
+
+function loadMoreImages() {
+  $.ajax({
+    url: "/more",
+    method: "get",
+    data: {page},
+    success: (d) => {
+      addPinsToWall(d);
+      page++;
+    }
+  });
+}
