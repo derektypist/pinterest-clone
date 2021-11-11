@@ -48,3 +48,44 @@ function loadMoreImages() {
     }
   });
 }
+
+function addPinsToWall(pins) {
+  let pin = "";
+}
+
+function handleAddPin(event) {
+  event.preventDefault();
+  let inputs = $("input");
+  let buttons = $("button");
+  let article = $(".modal-status-article");
+  let p = $(".modal-status-article p");
+  let spinner = $(".modal-status-article article");
+  inputs.addClass("disabled").prop("disabled", true);
+  buttons.addClass("disabled").prop("disabled", true);
+  article.removeClass("d-none");
+  spinner.removeClass("d-none");
+  p.text("Adding pin, please wait").removeClass("text-danger");
+  $.ajax({
+    url: "/add",
+    method: "POST",
+    data: {link: $("#input-link").val(), title: $("#input-title").val()},
+    success: (d) => {
+      if (typeof d === "string") {
+        p.text(d).addClass("text-danger");
+        inputs.removeClass("disabled").prop("disabled", false);
+        buttons.removeClass("disabled").prop("disabled", false);
+        spinner.addClass("d-none");
+      } else {
+        spinner.addClass("d-none");
+        p.text("Pin added!").addClass("text-success");
+        window.location.reload(true);
+      }
+    },
+    error: () => {
+      p.text("Error occurred, please try again").addClass("text-danger");
+      inputs.removeClass("disabled").prop("disabled", false);
+      buttons.removeClass("disabled").prop("disabled", false);
+      spinner.addClass("d-none");
+    }
+  });
+}
