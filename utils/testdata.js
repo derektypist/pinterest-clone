@@ -55,3 +55,18 @@ function createTestPins(testUserIds, testPinIds, testUserLinks, extraPinIds) {
   }
   return pins;
 }
+
+function createTestUsers(testUserIds, testPinIds, testUserLinks) {
+  let users = [];
+  // Apply Loop
+  for (let i=0;i<testUserIds.length;i++) {
+    users.push({
+      _id: testUserIds[i],
+      username: `test${i+1}`,
+      password: "12345",
+      link: testUserLinks[i],
+      imagelinks: [testPinIds[i]]
+    });
+  }
+  return users;
+}
