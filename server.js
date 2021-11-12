@@ -4,6 +4,8 @@ const helmet = require("helmet");
 const passport = require("passport");
 require("./config/passport-setup");
 const mongoose = require("mongoose");
+const url = require("./config/db.js").url;
+mongoose.connect(url);
 const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/auth-routes");
 const User = require("./models").User;
@@ -21,3 +23,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+// Routes and DB
+let db = mongoose.connection;
+db.on('error', function(err) {
+  console.log(err);
+});
+
+db.on('open',function() {
+  console.log("Connected to DB");
+  let InitializeTestData = require("./utils/testdata.js");
+  InitializeTestData();
+});
