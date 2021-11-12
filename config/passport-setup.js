@@ -36,8 +36,8 @@ passport.use(new LocalStrategy((username, password, done) => {
 });
 
 passport.use(new GithubStrategy({
-  clientID: process.env.GITHUB_CURRENT_ID,
-  clientSecret: process.env.GITHUB_CURRENT_SECRET,
+  clientID: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
   callbackURL: 'https://pinterest-clone.ddxps46.repl.co/auth/github/redirect'
 }, (accessToken,refreshToken,profile,done) => {
   User.findOne({githubId: profile.id}).then((currentUser) => {
