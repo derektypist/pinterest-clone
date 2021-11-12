@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 const User = require("../models").User;
 const Pin = require("../models").Pin;
-const randombytes = require("randombytes");
+const randomBytes = require("randombytes");
 
 // Functions
 function createTestPins(testUserIds, testPinIds, testUserLinks, extraPinIds) {
@@ -100,6 +100,22 @@ let initializeTestData = () => {
   for (let i=0; i<testPinIds.length; i++) {
     testPinIds[i] = mongoose.Types.ObjectId(testPinIds[i]);
     testUserIds[i] = mongoose.Types.ObjectId(testUserIds[i]);
-    testUserLinks = randombytes(3).toString("hex");
+    testUserLinks = randomBytes(3).toString("hex");
   }
+
+  Promise.all([
+    Pin.insertMany(createTestPins(testUserIds, testPinIds, testUserLinks, extraPinIds)),
+    User.insertMany(createTestUsers(testUserIds, testPinIds, testUserLinks))
+  ]).then(() => {
+    User.updateOne({_id: testUserIds[0]}, {$push: {imagelinks: {$each: extraPinIds}}}, (err) => {
+      if (err) {
+        console.log("Error creating extra test pins");
+      }
+    });
+      console.log("Created test users and pins");
+      }, (reason) => {
+      console.log(reason.message);
+  });
 };
+
+module.exports = initializeTestData;
