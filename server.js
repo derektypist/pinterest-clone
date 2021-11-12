@@ -17,4 +17,7 @@ const urlencodedParser = bodyParser.urlencoded({extended: false});
 app.set('view engine','pug');
 app.set('views','./views');
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 
