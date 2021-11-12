@@ -70,3 +70,36 @@ function createTestUsers(testUserIds, testPinIds, testUserLinks) {
   }
   return users;
 }
+
+let initializeTestData = () => {
+  let testPinIds = [
+    "5b3b5c0cb81acf21589e5656",
+    "5b3b5c0cb81acf21589e5658",
+    "5b3b5c0cb81acf21589e565a",
+    "5b3b5c0cb81acf21589e565c",
+    "5b3b5c0cb81acf21589e565e"
+  ];
+
+  let extraPinIds = [
+    "5b3b86f0a68fb726c41cb122",
+    "5b3b86f0a68fb726c41cb123",
+    "5b3b86f0a68fb726c41cb124"
+  ];
+
+  let testUserIds = [
+    "5b3b781577dc760ae82039a4",
+    "5b3b781577dc760ae82039a5",
+    "5b3b781577dc760ae82039a6",
+    "5b3b781577dc760ae82039a7",
+    "5b3b781577dc760ae82039a8"
+  ];
+
+  let testUserLinks = [];
+
+  // Apply Loop
+  for (let i=0; i<testPinIds.length; i++) {
+    testPinIds[i] = mongoose.Types.ObjectId(testPinIds[i]);
+    testUserIds[i] = mongoose.Types.ObjectId(testUserIds[i]);
+    testUserLinks = randombytes(3).toString("hex");
+  }
+};
