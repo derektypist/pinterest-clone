@@ -47,7 +47,7 @@ passport.use(new GithubStrategy({
       new User({
         githubId: profile.id,
         username: profile.username,
-        link: randomBytes(3).toString("hex")
+        link: randombytes(3).toString("hex")
       }).save().then((theNewUser) => {
         done(null, theNewUser);
       });
