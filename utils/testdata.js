@@ -19,15 +19,39 @@ function createTestPins(testUserIds, testPinIds, testUserLinks, extraPinIds) {
   "https://wallhaven.cc/w/wyz96p",
   "https://wallhaven.cc/w/odlr3p"
   ];
-  let titles = ["Commodore 64",
-  "Windows 95",
+  let titles = ["Commodore 64 Computer",
+  "Windows 95 Computer",
   "Light",
   "Wembley Stadium",
   "The Beatles",
   "Spectrum",
   "Fibonacci Sequence",
   "Plasma",
-  "Business Suit",
-  "Christmas"
+  "Women in Business Suit",
+  "Christmas Time"
   ];
+
+  // Apply Loop
+  for (let i=0,t=0;i<links.length;i++) {
+    let owner = `test${i+1}`;
+    let ownerid = testUserIds[i];
+    let ownerlink = testUserLinks[i];
+    let _id = testPinIds[i];
+    if (i >= 5) {
+      owner = "test1";
+      ownerid = testUserIds[0];
+      ownerlink = testUserLinks[0];
+      _id = extraPinIds[t];
+      t++;
+    }
+    pins.push({
+      _id,
+      owner,
+      ownerid,
+      ownerlink,
+      title: titles[i],
+      link: links[i]
+    });
+  }
+  return pins;
 }
