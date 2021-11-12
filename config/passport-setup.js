@@ -2,7 +2,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const GithubStrategy = require('passport-github');
-const randombytes = require('randombytes');
+const randomBytes = require('randombytes');
 const User = require('../models').User;
 
 // Serialize and Deserialize 
@@ -47,7 +47,7 @@ passport.use(new GithubStrategy({
       new User({
         githubId: profile.id,
         username: profile.username,
-        link: randombytes(3).toString("hex")
+        link: randomBytes(3).toString("hex")
       }).save().then((theNewUser) => {
         done(null, theNewUser);
       });
