@@ -38,7 +38,9 @@ Did Searches on GitHub and Google about FCC Pinterest Clone.  Found one by Teemu
 
 ### Media
 
-Images from Wallhaven.
+Images from [Wallhaven](https://wallhaven.cc).
+
+Examples - Commodore 64, Windows 95, Light, Wembley Stadium, The Beatles, Spectrum, Fibonacci Sequence, Plasma, Women in Business Suit, Christmas Time.
 
 ### Acknowledgements
 
