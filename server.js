@@ -45,3 +45,20 @@ app.get("/",(req,res,next) => {
     res.render("index",{user: req.user, items});
   });
 });
+
+app.post("/add", authCheck, urlencodedParser, (req,res) => {
+  let link = req.body.link + "";
+  let title = req.body.title + "";
+  // If length of title is not greater than 0
+  if (!title.length > 0) {
+    return res.send("Title cannot be empty, please try again.");
+  }
+
+  // If length of title is more than 90 characters
+  if (title.length > 90) {
+    return res.send("Title is too long")
+  }
+
+  // Check if the string is an URL
+  
+});
