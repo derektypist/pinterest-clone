@@ -28,7 +28,7 @@ Pin consists of owner, ownerid, ownerlink, link and title.  All are string, exce
 
 ## Technologies
 
-This project uses the technologies of Pug, CSS3, Bootstrap 5.1.3, Font Awesome 5.15.4, Validator, Mongoose, MongoDB and [Masonry.js](https://masonry.desandro.com)
+This project uses the technologies of Pug, CSS3, Bootstrap 5.1.3, Font Awesome 5.15.4, Express, Body Parser, Cookie Parser, Random Bytes, Validator, Mongoose, MongoDB and [Masonry.js](https://masonry.desandro.com)
 
 ## Credits
 
