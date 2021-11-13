@@ -60,5 +60,14 @@ app.post("/add", authCheck, urlencodedParser, (req,res) => {
   }
 
   // Check if the string is an URL
-  
+
 });
+
+// Function to Authentication Check
+function authCheck(req,res,next) {
+  if (!req.user) {
+    return res.redirect("/auth");
+  } else {
+    return next();
+  }
+}
