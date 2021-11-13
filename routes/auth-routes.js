@@ -12,7 +12,7 @@ router.get("/", (req,res) => {
   if (req.user) {
     res.redirect("/");
   } else {
-    res.render('signin.pug',{message: req.flash('error')});
+    res.render('signin',{message: req.flash('error')});
   }
 });
 
