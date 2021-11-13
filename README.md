@@ -28,13 +28,17 @@ Pin consists of owner, ownerid, ownerlink, link and title.  All are string, exce
 
 ## Technologies
 
-This project uses the technologies of Pug, CSS3, Bootstrap 5.1.3, Font Awesome 5.15.4, [Masonry.js](https://masonry.desandro.com)
+This project uses the technologies of Pug, CSS3, Bootstrap 5.1.3, Font Awesome 5.15.4, Validator, Mongoose, MongoDB and [Masonry.js](https://masonry.desandro.com)
 
 ## Credits
 
 ### Contents
 
-Did Searches on GitHub and Google about FCC Pinterest Clone.  Accessed 15 October 2021.
+Did Searches on GitHub and Google about FCC Pinterest Clone.  Found one by Teemu Seppala.  Accessed 15 October 2021.
+
+### Media
+
+Images from Wallhaven.
 
 ### Acknowledgements
 
@@ -43,3 +47,4 @@ Did Searches on GitHub and Google about FCC Pinterest Clone.  Accessed 15 Octobe
 - [Bootstrap](https://www.getbootstrap.com)
 - [Pug](https://www.pugjs.org)
 - [Passport](https://www.passportjs.org)
+- [Wallhaven](https://wallhaven.cc)
