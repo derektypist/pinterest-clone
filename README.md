@@ -26,9 +26,24 @@ In addition, username and link are required and unique and imagelinks is an arra
 
 Pin consists of owner, ownerid, ownerlink, link and title.  All are string, except ownerid, which is in the Schema.Types.ObjectId.  All are required.  In addition, link is unique.
 
+## Features
+
+- Link to Images
+- Delete Images that have been linked to
+- Browse other users' walls of images
+- Add Pins
+
 ## Technologies
 
 This project uses the technologies of Pug, CSS3, Bootstrap 5.1.3, Font Awesome 5.15.4, Express, Body Parser, Cookie Parser, Random Bytes, Validator, Mongoose, MongoDB and [Masonry.js](https://masonry.desandro.com)
+
+## Testing
+
+Ensure all the user stories have been met.
+
+## Deployment
+
+On [REPL](https://replit.com/@ddxps46/pinterest-clone.co)
 
 ## Credits
 
