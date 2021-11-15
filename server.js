@@ -85,6 +85,30 @@ app.post("/add", authCheck, urlencodedParser, (req,res) => {
 
 });
 
+app.post("/remove", authCheck, urlencodedParser, (req, res, next) => {
+  let pin_id = req.body.pin_id;
+  let isOWn = false;
+  req.user.imagelinks.forEach(e => {
+    if (e == pin_id) {
+      isOwn = true;
+      return;
+    }
+  });
+  if (!isOwn) {
+    return res.send("Auth error");
+  }
+
+  // Not good if the operation partially succeeds
+  Promise.all([
+    Pin.deleteOne({_id:pin_id}),
+    User.updateOne({_id:req.user.id}, {$pull: {imagelinks: pin_id}})
+  ]).then(() => {
+    return res.redirect("/");
+  }).catch((err) => {
+    next(err);
+  });
+});
+
 // Start Server
 app.listen(process.env.PORT || 3000, function() {
   console.log(`Listening on port ${process.env.PORT}`);
