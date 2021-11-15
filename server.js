@@ -109,6 +109,20 @@ app.post("/remove", authCheck, urlencodedParser, (req, res, next) => {
   });
 });
 
+app.get("/user/:link", (req, res, next) => {
+  let username;
+  User.findOne({link: req.params.link}).then((user) => {
+    username = user.username;
+    let pins = user.imagelinks;
+    return Pin.find({_id: {$in: pins}});
+  }).then((pins) => {
+    res.render("index", {user: req.user, items: pins, username});
+  }).catch((err) => {
+    next(err);
+  });
+});
+
+
 // Start Server
 app.listen(process.env.PORT || 3000, function() {
   console.log(`Listening on port ${process.env.PORT}`);
