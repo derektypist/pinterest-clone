@@ -56,10 +56,32 @@ app.post("/add", authCheck, urlencodedParser, (req,res) => {
 
   // If length of title is more than 90 characters
   if (title.length > 90) {
-    return res.send("Title is too long")
+    return res.send("Title is too long");
   }
 
   // Check if the string is an URL
+  if (validator.isURL(link)) {
+    link = link.match(/https/gm) ? link : "https://" + link;
+    new Pin({
+      owner: req.user.username,
+      ownerid: req.user.id,
+      ownerlink: req.user.link,
+      link,
+      title     
+    }).save((err, pin) => {
+      if (err) {
+        return res.send("Error occurred.  Please check fields and try again.");
+      }
+      User.updateOne({_id: req.user.id}, {$push: {imagelinks: pin.id}}, (err) => {
+        if (err) {
+          return res.send("Error occurred, please try again.");
+        }
+        return res.send(pin);
+      });
+    });
+  } else {
+    return res.send("Please check the image url and try again");
+  }
 
 });
 
