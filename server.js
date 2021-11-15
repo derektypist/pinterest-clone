@@ -122,6 +122,11 @@ app.get("/user/:link", (req, res, next) => {
   });
 });
 
+// Default Route
+app.get("*", (req, res) => {
+  res.status(404).end("Page not found");
+});
+
 
 // Start Server
 app.listen(process.env.PORT || 3000, function() {
