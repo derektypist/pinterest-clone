@@ -35,7 +35,7 @@ Pin consists of owner, ownerid, ownerlink, link and title.  All are string, exce
 
 ## Technologies
 
-This project uses the technologies of Pug, CSS3, Bootstrap 5.1.3, Font Awesome 5.15.4, Express, Body Parser, Cookie Parser, Random Bytes, Validator, Mongoose, MongoDB and [Masonry.js](https://masonry.desandro.com)
+This project uses the technologies of Pug, CSS3, Bootstrap 5.1.3, Font Awesome 5.15.4, Express, Body Parser, Cookie Parser, Random Bytes, [Validator] (https://github.com/validatorjs/validator.js), Mongoose, MongoDB and [Masonry.js](https://masonry.desandro.com)
 
 ## Testing
 
@@ -65,3 +65,4 @@ Examples - Commodore 64, Windows 95, Light, Wembley Stadium, The Beatles, Spectr
 - [Pug](https://www.pugjs.org)
 - [Passport](https://www.passportjs.org)
 - [Wallhaven](https://wallhaven.cc)
+- [Validator](https://github.com/validatorjs/validator.js)
