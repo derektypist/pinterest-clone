@@ -124,7 +124,13 @@ app.get("/user/:link", (req, res, next) => {
 
 // Default Route
 app.get("*", (req, res) => {
-  res.status(404).end("Page not found");
+  res.status(404).send("Page not found");
+});
+
+// Route default error handler
+app.use((err, req, res) => {
+  console.error(err.stack);
+  res.status(500).send(err.message);
 });
 
 
