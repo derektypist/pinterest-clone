@@ -26,6 +26,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes and DB
+
+app.use("/auth", authRoutes);
 let db = mongoose.connection;
 db.on('error', function(err) {
   console.log(err);
