@@ -33,7 +33,7 @@ passport.use(new LocalStrategy((username, password, done) => {
 
     return done(null, user);
   });
-});
+}));
 
 passport.use(new GithubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
