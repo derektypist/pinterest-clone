@@ -43,7 +43,7 @@ Ensure all the user stories have been met.
 
 ## Deployment
 
-On [REPL](https://replit.com/@ddxps46/pinterest-clone.co)
+On [REPL](https://pinterest-clone.ddxps46.repl.co)
 
 ## Credits
 
