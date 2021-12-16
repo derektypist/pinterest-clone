@@ -9,7 +9,7 @@ let helmetSetup = {
       scriptSrc: ["'self'","https://code.jquery.com","https://stackpath.bootstrapcdn.com","https://unpkg.com"],
       objectSrc: ["'none'"],
       frameAncestors: ["'none'"],
-      baseUrl: ["'none'"],
+      baseUri: ["'none'"],
       formAction: ["'self'"],
       upgradeInsecureRequests: true
     }
